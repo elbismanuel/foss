@@ -4,14 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="theme-color" content="#202A3B">
-		<meta name="description" content="Presentación de Elbis Flores en el evento AIG FOSS 2024">
-
     <title>FOSS Presentación</title>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -42,13 +38,10 @@
             position: relative;
             width: 100%;
             height: 100%;
+            font-size: 16px;
         }
 
-        html,
-        body,
-        .reveal,
-        .slides,
-        section {
+        html, body, .reveal, .slides, section {
             height: 100vh;
             margin: 0;
             padding: 0;
@@ -77,13 +70,18 @@
             }
         }
 
-        /* Asegurar que los controles sean visibles en móviles */
         .reveal .controls {
             display: block !important;
         }
 
         .reveal .controls button {
             color: #fff !important;
+        }
+
+        @media (max-width: 640px) {
+            .reveal {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -116,23 +114,23 @@
 
                                 <!-- Contenido -->
                                 <div class="text-center">
-                                    <h1 class="text-2xl md:text-3xl font-bold mb-2 animate__animated animate__slideInRight">Elbis Flores</h1>
+                                    <h1 class="text-xl md:text-2xl font-bold mb-2 animate__animated animate__slideInRight">Elbis Flores</h1>
                                     <!-- Redes sociales -->
                                     <div class="flex justify-center space-x-4 mb-4">
                                         <a href="https://twitter.com/elbisflores" target="_blank" rel="noopener"
                                             class="text-blue-600 hover:text-blue-800">
-                                            <i data-lucide="twitter" class="w-5 h-5 md:w-6 md:h-6"></i>
+                                            <i data-lucide="twitter" class="w-4 h-4 md:w-5 md:h-5"></i>
                                         </a>
                                         <a href="https://www.linkedin.com/in/elbisflores/" target="_blank" rel="noopener"
                                             class="text-blue-600 hover:text-blue-800">
-                                            <i data-lucide="linkedin" class="w-5 h-5 md:w-6 md:h-6"></i>
+                                            <i data-lucide="linkedin" class="w-4 h-4 md:w-5 md:h-5"></i>
                                         </a>
                                         <a href="https://github.com/elbismanuel" target="_blank" rel="noopener"
                                             class="text-blue-600 hover:text-blue-800">
-                                            <i data-lucide="github" class="w-5 h-5 md:w-6 md:h-6"></i>
+                                            <i data-lucide="github" class="w-4 h-4 md:w-5 md:h-5"></i>
                                         </a>
                                     </div>
-                                    <p id="bio" class="text-sm md:text-lg lg:text-xl mb-4 animate__animated animate__fadeIn animate__delay-1s text-left">
+                                    <p id="bio" class="text-xs md:text-sm lg:text-xl mb-4 animate__animated animate__fadeIn animate__delay-1s text-left">
                                         Con <span id="yearsExperience">15</span> años de experiencia en <strong>tecnología</strong> y
                                         <strong>desarrollo de aplicaciones</strong> 🚀, mi pasión por la tecnología sigue creciendo día a
                                         día 💻. Actualmente, lidero la <strong>dirección de arquitectura tecnológica</strong> en la
@@ -144,7 +142,7 @@
 
                             <div class="text-center mt-4">
                                 <a href="https://aig.gob.pa" target="_blank" rel="noopener"
-                                    class="text-blue-600 hover:text-blue-800 underline">aig.gob.pa</a>
+                                    class="text-blue-600 hover:text-blue-800 underline text-xs md:text-sm">aig.gob.pa</a>
                                 <!-- Texto AIG FOSS 2024 -->
                                 <p id="aigFossText" class="text-xs md:text-sm font-bold mt-2 animate__animated animate__fadeIn animate__delay-3s"></p>
                             </div>
@@ -159,7 +157,7 @@
                     <!-- Cabecera con imagen de fondo reducida -->
                     <div class="h-1/5 bg-code-bg bg-cover bg-center relative">
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                            <h2 class="text-white text-2xl md:text-4xl font-bold px-4 text-center">
+                            <h2 class="text-white text-xl md:text-2xl lg:text-3xl font-bold px-4 text-center">
                                 ¿Que es FOSS?
                             </h2>
                         </div>
@@ -178,7 +176,7 @@
     <button id="fullscreenBtn"
         class="fixed bottom-4 left-4 bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110"
         title="Pantalla completa">
-        <i data-lucide="maximize" class="w-4 h-4 md:w-6 md:h-6"></i>
+        <i data-lucide="maximize" class="w-4 h-4 md:w-5 md:h-5"></i>
     </button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
