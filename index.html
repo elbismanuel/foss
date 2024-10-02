@@ -88,9 +88,9 @@
                     <!-- Columna derecha (40%) -->
                     <div class="w-2/5 flex flex-col p-8 bg-gray-100 relative">
                         <div class="flex flex-col justify-between h-full">
-                            <div>
+                            <div class="flex-grow flex flex-col justify-center items-center">
                                 <!-- Imagen de perfil -->
-                                <div class="flex justify-center mb-8">
+                                <div class="mb-4">
                                     <img src="img/profile.png" alt="Perfil de Elbis Flores"
                                         class="w-32 h-32 rounded-full shadow-lg animate__animated animate__fadeIn">
                                 </div>
@@ -100,31 +100,35 @@
                                     <h1 class="text-3xl font-bold mb-2 animate__animated animate__slideInRight">Elbis Flores</h1>
                                     <!-- Redes sociales -->
                                     <div class="flex justify-center space-x-4 mb-4">
-                                        <a href="https://twitter.com/elbisflores" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800">
+                                        <a href="https://twitter.com/elbisflores" target="_blank" rel="noopener"
+                                            class="text-blue-600 hover:text-blue-800">
                                             <i data-lucide="twitter" class="w-6 h-6"></i>
                                         </a>
-                                        <a href="https://www.linkedin.com/in/elbisflores/" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800">
+                                        <a href="https://www.linkedin.com/in/elbisflores/" target="_blank" rel="noopener"
+                                            class="text-blue-600 hover:text-blue-800">
                                             <i data-lucide="linkedin" class="w-6 h-6"></i>
                                         </a>
-                                        <a href="https://github.com/elbismanuel" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800">
+                                        <a href="https://github.com/elbismanuel" target="_blank" rel="noopener"
+                                            class="text-blue-600 hover:text-blue-800">
                                             <i data-lucide="github" class="w-6 h-6"></i>
                                         </a>
                                     </div>
-                                    <p id="bio" class="pt-5 text-2xl mb-4 animate__animated animate__fadeIn animate__delay-1s text-left">
-                                        Con <span id="yearsExperience">15</span> años de experiencia en <strong>tecnología</strong> y <strong>desarrollo de aplicaciones</strong> 🚀, mi pasión por la tecnología sigue creciendo día a día 💻. Actualmente, lidero la <strong>dirección de arquitectura tecnológica</strong> en la Autoridad Nacional para la Innovación Gubernamental (AIG), donde buscamos innovar y mejorar los servicios públicos mediante soluciones tecnológicas eficientes.
+                                    <p id="bio" class="text-2xl mb-4 animate__animated animate__fadeIn animate__delay-1s text-left">
+                                        Con <span id="yearsExperience">15</span> años de experiencia en <strong>tecnología</strong> y
+                                        <strong>desarrollo de aplicaciones</strong> 🚀, mi pasión por la tecnología sigue creciendo día a
+                                        día 💻. Actualmente, lidero la <strong>dirección de arquitectura tecnológica</strong> en la
+                                        Autoridad Nacional para la Innovación Gubernamental (AIG), donde buscamos innovar y mejorar los
+                                        servicios públicos mediante soluciones tecnológicas eficientes.
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="text-center">
+                            <div class="text-center mt-4">
                                 <a href="https://aig.gob.pa" target="_blank" rel="noopener"
                                     class="text-blue-600 hover:text-blue-800 underline">aig.gob.pa</a>
+                                <!-- Texto AIG FOSS 2024 -->
+                                <p id="aigFossText" class="text-sm font-bold mt-2 animate__animated animate__fadeIn animate__delay-3s"></p>
                             </div>
-                        </div>
-
-                        <!-- Texto AIG FOSS 2024 -->
-                        <div class="absolute bottom-0 left-0 right-0 text-center pb-2">
-                            <p id="aigFossText" class="text-sm font-bold animate__animated animate__fadeIn animate__delay-3s"></p>
                         </div>
                     </div>
                 </div>
@@ -154,7 +158,8 @@
 
     <!-- Botón de pantalla completa -->
     <button id="fullscreenBtn"
-        class="fixed bottom-4 left-4 bg-blue-500 hover:bg-blue-700 text-white font-bold p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110" title="Pantalla completa">
+        class="fixed bottom-4 left-4 bg-blue-500 hover:bg-blue-700 text-white font-bold p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110"
+        title="Pantalla completa">
         <i data-lucide="maximize" class="w-6 h-6"></i>
     </button>
 
@@ -168,7 +173,7 @@
             maxScale: 1,
             center: false,
             hash: true,
-            scale: 1.25, 
+            scale: 1.25,
         });
 
         document.addEventListener('DOMContentLoaded', function () {
