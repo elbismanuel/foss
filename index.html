@@ -2,282 +2,296 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOSS Presentación</title>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    backgroundImage: {
-                        'code-bg': "url('img/side.png')",
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Rubik', sans-serif;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#202A3B">
+	<title>FOSS Presentación</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					backgroundImage: {
+						'code-bg': "url('img/side.png')",
+					}
+				}
+			}
+		}
+	</script>
+	<style>
+		body {
+			font-family: 'Rubik', sans-serif;
+		}
 
-        .reveal .slides section {
-            top: 0 !important;
-        }
+		.reveal .slides section {
+			top: 0 !important;
+		}
 
-        .reveal .slides>section {
-            padding: 0;
-        }
+		.reveal .slides>section {
+			padding: 0;
+		}
 
-        .reveal {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            font-size: 16px;
-        }
+		.reveal {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			font-size: 16px;
+		}
 
-        html, body, .reveal, .slides, section {
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-        }
+		html,
+		body,
+		.reveal,
+		.slides,
+		section {
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+		}
 
-        .icon-carousel img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
+		.icon-carousel img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+		}
 
-        .icon-carousel img.active {
-            opacity: 1;
-        }
+		.icon-carousel img.active {
+			opacity: 1;
+		}
 
-        #fullscreenBtn {
-            z-index: 1000;
-        }
+		#fullscreenBtn {
+			z-index: 1000;
+		}
 
-        @media (max-width: 768px) {
-            .icon-carousel {
-                display: none;
-            }
-        }
+		@media (max-width: 768px) {
+			.icon-carousel {
+				display: none;
+			}
+		}
 
-        .reveal .controls {
-            display: block !important;
-        }
+		.reveal .controls {
+			color: #000 !important;
+		}
 
-        .reveal .controls button {
-            color: #fff !important;
-        }
+		.reveal .controls button {
+			color: #000 !important;
+			opacity: 0.7;
+		}
 
-        @media (max-width: 640px) {
-            .reveal {
-                font-size: 14px;
-            }
-        }
-    </style>
+		.reveal .controls button:hover {
+			opacity: 1;
+		}
+
+		@media (max-width: 640px) {
+			.reveal {
+				font-size: 14px;
+			}
+		}
+	</style>
 </head>
 
 <body class="relative">
-    <div class="reveal">
-        <div class="slides">
-            <!-- Primera diapositiva (actualizada y responsiva) -->
-            <section>
-                <div class="flex flex-col md:flex-row h-full">
-                    <!-- Columna izquierda (60% en escritorio, 100% en móvil) -->
-                    <div class="w-full md:w-3/5 h-1/3 md:h-full relative bg-code-bg bg-cover bg-center">
-                        <div class="absolute inset-0 flex items-center justify-center icon-carousel">
-                            <img src="img/foss.png" alt="Logo FOSS" class="w-1/4 md:w-1/3 h-auto active">
-                            <img src="img/tux.png" alt="Logo Linux" class="w-1/4 md:w-1/3 h-auto">
-                            <img src="img/bsd.png" alt="Logo BSD" class="w-1/4 md:w-1/3 h-auto">
-                            <img src="img/gnu.png" alt="Logo GNU" class="w-1/4 md:w-1/3 h-auto">
-                        </div>
-                    </div>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Primera diapositiva (actualizada y responsiva) -->
+			<section>
+				<div class="flex flex-col md:flex-row h-full">
+					<!-- Columna izquierda (60% en escritorio, 100% en móvil) -->
+					<div class="w-full md:w-3/5 h-1/3 md:h-full relative bg-code-bg bg-cover bg-center">
+						<div class="absolute inset-0 flex items-center justify-center icon-carousel">
+							<img src="img/foss.png" alt="Logo FOSS" class="w-1/4 md:w-1/3 h-auto active">
+							<img src="img/tux.png" alt="Logo Linux" class="w-1/4 md:w-1/3 h-auto">
+							<img src="img/gnu.png" alt="Logo GNU" class="w-1/4 md:w-1/3 h-auto">
+							<img src="img/firefox.png" alt="Logo Firefox" class="w-1/4 md:w-1/3 h-auto">
+							<img src="img/wordpress.png" alt="Logo Wordpress" class="w-1/4 md:w-1/3 h-auto">
+						</div>
+					</div>
 
-                    <!-- Columna derecha (40% en escritorio, 100% en móvil) -->
-                    <div class="w-full md:w-2/5 flex flex-col p-4 md:p-8 bg-gray-100 relative">
-                        <div class="flex flex-col justify-between h-full">
-                            <div class="flex-grow flex flex-col justify-center items-center">
-                                <!-- Imagen de perfil -->
-                                <div class="mb-4">
-                                    <img src="img/profile.png" alt="Perfil de Elbis Flores"
-                                        class="w-24 h-24 md:w-32 md:h-32 rounded-full shadow-lg animate__animated animate__fadeIn">
-                                </div>
+					<!-- Columna derecha (40% en escritorio, 100% en móvil) -->
+					<div class="w-full md:w-2/5 flex flex-col p-4 md:p-8 bg-gray-100 relative">
+						<div class="flex flex-col justify-between h-full">
+							<div class="flex-grow flex flex-col justify-center items-center">
+								<!-- Imagen de perfil -->
+								<div class="mb-4">
+									<img src="img/profile.png" alt="Perfil de Elbis Flores"
+										class="w-24 h-24 md:w-32 md:h-32 rounded-full shadow-lg animate__animated animate__fadeIn">
+								</div>
 
-                                <!-- Contenido -->
-                                <div class="text-center">
-                                    <h1 class="text-xl md:text-2xl font-bold mb-2 animate__animated animate__slideInRight">Elbis Flores</h1>
-                                    <!-- Redes sociales -->
-                                    <div class="flex justify-center space-x-4 mb-4">
-                                        <a href="https://twitter.com/elbisflores" target="_blank" rel="noopener"
-                                            class="text-blue-600 hover:text-blue-800">
-                                            <i data-lucide="twitter" class="w-4 h-4 md:w-5 md:h-5"></i>
-                                        </a>
-                                        <a href="https://www.linkedin.com/in/elbisflores/" target="_blank" rel="noopener"
-                                            class="text-blue-600 hover:text-blue-800">
-                                            <i data-lucide="linkedin" class="w-4 h-4 md:w-5 md:h-5"></i>
-                                        </a>
-                                        <a href="https://github.com/elbismanuel" target="_blank" rel="noopener"
-                                            class="text-blue-600 hover:text-blue-800">
-                                            <i data-lucide="github" class="w-4 h-4 md:w-5 md:h-5"></i>
-                                        </a>
-                                    </div>
-                                    <p id="bio" class="text-xs md:text-sm lg:text-xl mb-4 animate__animated animate__fadeIn animate__delay-1s text-left">
-                                        Con <span id="yearsExperience">15</span> años de experiencia en <strong>tecnología</strong> y
-                                        <strong>desarrollo de aplicaciones</strong> 🚀, mi pasión por la tecnología sigue creciendo día a
-                                        día 💻. Actualmente, lidero la <strong>dirección de arquitectura tecnológica</strong> en la
-                                        Autoridad Nacional para la Innovación Gubernamental (AIG), donde buscamos innovar y mejorar los
-                                        servicios públicos mediante soluciones tecnológicas eficientes.
-                                    </p>
-                                </div>
-                            </div>
+								<!-- Contenido -->
+								<div class="text-center">
+									<h1 class="text-xl md:text-2xl font-bold mb-2 animate__animated animate__slideInRight">Elbis Flores
+									</h1>
+									<!-- Redes sociales -->
+									<div class="flex justify-center space-x-4 mb-4">
+										<a href="https://twitter.com/elbisflores" target="_blank" rel="noopener"
+											class="text-blue-600 hover:text-blue-800">
+											<i data-lucide="twitter" class="w-4 h-4 md:w-5 md:h-5"></i>
+										</a>
+										<a href="https://www.linkedin.com/in/elbisflores/" target="_blank" rel="noopener"
+											class="text-blue-600 hover:text-blue-800">
+											<i data-lucide="linkedin" class="w-4 h-4 md:w-5 md:h-5"></i>
+										</a>
+										<a href="https://github.com/elbismanuel" target="_blank" rel="noopener"
+											class="text-blue-600 hover:text-blue-800">
+											<i data-lucide="github" class="w-4 h-4 md:w-5 md:h-5"></i>
+										</a>
+									</div>
+									<p id="bio"
+										class="text-xs md:text-sm lg:text-2xl mt-2 mb-4 animate__animated animate__fadeIn animate__delay-1s text-left">
+										Con <span id="yearsExperience">15</span> años de experiencia en <strong>tecnología</strong> y
+										<strong>desarrollo de aplicaciones</strong> 🚀, mi pasión por la tecnología sigue creciendo día a
+										día 💻. Actualmente, lidero la <strong>dirección de arquitectura tecnológica</strong> en la
+										Autoridad Nacional para la Innovación Gubernamental (AIG), donde buscamos innovar y mejorar los
+										servicios públicos mediante soluciones tecnológicas eficientes.
+									</p>
+								</div>
+							</div>
 
-                            <div class="text-center mt-4">
-                                <a href="https://aig.gob.pa" target="_blank" rel="noopener"
-                                    class="text-blue-600 hover:text-blue-800 underline text-xs md:text-sm">aig.gob.pa</a>
-                                <!-- Texto AIG FOSS 2024 -->
-                                <p id="aigFossText" class="text-xs md:text-sm font-bold mt-2 animate__animated animate__fadeIn animate__delay-3s"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+							<div class="text-center mt-4">
+								<a href="https://aig.gob.pa" target="_blank" rel="noopener"
+									class="text-blue-600 hover:text-blue-800 underline text-xs md:text-sm">aig.gob.pa</a>
+								<!-- Texto AIG FOSS 2024 -->
+								<p id="aigFossText"
+									class="text-xs md:text-sm font-bold mt-2 animate__animated animate__fadeIn animate__delay-3s"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-            <!-- Nueva plantilla para las siguientes diapositivas (responsiva) -->
-            <section>
-                <div class="flex flex-col h-full">
-                    <!-- Cabecera con imagen de fondo reducida -->
-                    <div class="h-1/5 bg-code-bg bg-cover bg-center relative">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                            <h2 class="text-white text-xl md:text-2xl lg:text-3xl font-bold px-4 text-center">
-                                ¿Que es FOSS?
-                            </h2>
-                        </div>
-                    </div>
+			<!-- Nueva plantilla para las siguientes diapositivas (responsiva) -->
+			<section>
+				<div class="flex flex-col h-full">
+					<!-- Cabecera con imagen de fondo reducida -->
+					<div class="h-1/5 bg-code-bg bg-cover bg-center relative">
+						<div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+							<h2 class="text-white text-xl md:text-2xl lg:text-3xl font-bold px-4 text-center">
+								¿Que es FOSS?
+							</h2>
+						</div>
+					</div>
 
-                    <!-- Contenido principal -->
-                    <div class="flex-grow p-4 md:p-8 bg-gray-100 overflow-auto">
-                        <!-- Aquí puedes añadir el contenido de las siguientes diapositivas -->
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
+					<!-- Contenido principal -->
+					<div class="flex-grow p-4 md:p-8 bg-gray-100 overflow-auto">
+						<!-- Aquí puedes añadir el contenido de las siguientes diapositivas -->
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
 
-    <!-- Botón de pantalla completa -->
-    <button id="fullscreenBtn"
-        class="fixed bottom-4 left-4 bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110"
-        title="Pantalla completa">
-        <i data-lucide="maximize" class="w-4 h-4 md:w-5 md:h-5"></i>
-    </button>
+	<!-- Botón de pantalla completa -->
+	<button id="fullscreenBtn"
+		class="fixed bottom-4 left-4 bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110"
+		title="Pantalla completa">
+		<i data-lucide="maximize" class="w-4 h-4 md:w-5 md:h-5"></i>
+	</button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
-    <script>
-        Reveal.initialize({
-            width: "100%",
-            height: "100%",
-            margin: 0,
-            minScale: 0.2,
-            maxScale: 1.5,
-            center: false,
-            hash: true,
-            controls: true,
-            controlsTutorial: true,
-            controlsLayout: 'bottom-right',
-            controlsBackArrows: 'visible',
-            progress: true,
-            slideNumber: false,
-            touch: true,
-            loop: false,
-            rtl: false,
-            navigationMode: 'default',
-        });
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+	<script>
+		Reveal.initialize({
+			width: "100%",
+			height: "100%",
+			margin: 0,
+			minScale: 0.2,
+			maxScale: 1.5,
+			center: false,
+			hash: true,
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'visible',
+			progress: true,
+			slideNumber: false,
+			touch: true,
+			loop: false,
+			rtl: false,
+			navigationMode: 'default',
+		});
 
-        document.addEventListener('DOMContentLoaded', function () {
-            lucide.createIcons();
+		document.addEventListener('DOMContentLoaded', function () {
+			lucide.createIcons();
 
-            const currentYear = new Date().getFullYear();
-            document.getElementById('aigFossText').textContent = `AIG FOSS ${currentYear}`;
+			const currentYear = new Date().getFullYear();
+			document.getElementById('aigFossText').textContent = `AIG FOSS ${currentYear}`;
 
-            // Contador de años de experiencia
-            let years = 0;
-            const countUp = setInterval(() => {
-                years++;
-                document.getElementById('yearsExperience').textContent = years;
-                if (years >= 15) clearInterval(countUp);
-            }, 100);
+			// Contador de años de experiencia
+			let years = 0;
+			const countUp = setInterval(() => {
+				years++;
+				document.getElementById('yearsExperience').textContent = years;
+				if (years >= 15) clearInterval(countUp);
+			}, 100);
 
-            // Carrusel de iconos solo para pantallas grandes
-            const icons = document.querySelectorAll('.icon-carousel img');
-            let currentIcon = 0;
-            let carouselInterval;
+			// Carrusel de iconos solo para pantallas grandes
+			const icons = document.querySelectorAll('.icon-carousel img');
+			let currentIcon = 0;
+			let carouselInterval;
 
-            function showNextIcon() {
-                icons[currentIcon].classList.remove('active');
-                currentIcon = (currentIcon + 1) % icons.length;
-                icons[currentIcon].classList.add('active');
-            }
+			function showNextIcon() {
+				icons[currentIcon].classList.remove('active');
+				currentIcon = (currentIcon + 1) % icons.length;
+				icons[currentIcon].classList.add('active');
+			}
 
-            function startCarousel() {
-                if (window.innerWidth > 768) {
-                    carouselInterval = setInterval(showNextIcon, 3000);
-                }
-            }
+			function startCarousel() {
+				if (window.innerWidth > 768) {
+					carouselInterval = setInterval(showNextIcon, 3000);
+				}
+			}
 
-            function stopCarousel() {
-                clearInterval(carouselInterval);
-            }
+			function stopCarousel() {
+				clearInterval(carouselInterval);
+			}
 
-            // Iniciar o detener el carrusel según el tamaño de la pantalla
-            function handleResize() {
-                if (window.innerWidth <= 768) {
-                    stopCarousel();
-                } else {
-                    stopCarousel(); // Detener primero para evitar múltiples intervalos
-                    startCarousel();
-                }
-            }
+			// Iniciar o detener el carrusel según el tamaño de la pantalla
+			function handleResize() {
+				if (window.innerWidth <= 768) {
+					stopCarousel();
+				} else {
+					stopCarousel(); // Detener primero para evitar múltiples intervalos
+					startCarousel();
+				}
+			}
 
-            window.addEventListener('resize', handleResize);
-            handleResize(); // Llamar al inicio para configurar el estado inicial
+			window.addEventListener('resize', handleResize);
+			handleResize(); // Llamar al inicio para configurar el estado inicial
 
-            // Función de pantalla completa
-            const fullscreenBtn = document.getElementById('fullscreenBtn');
-            const fullscreenIcon = fullscreenBtn.querySelector('i');
+			// Función de pantalla completa
+			const fullscreenBtn = document.getElementById('fullscreenBtn');
+			const fullscreenIcon = fullscreenBtn.querySelector('i');
 
-            function updateFullscreenButton() {
-                if (document.fullscreenElement) {
-                    fullscreenIcon.setAttribute('data-lucide', 'minimize');
-                } else {
-                    fullscreenIcon.setAttribute('data-lucide', 'maximize');
-                }
-                lucide.createIcons();
-            }
+			function updateFullscreenButton() {
+				if (document.fullscreenElement) {
+					fullscreenIcon.setAttribute('data-lucide', 'minimize');
+				} else {
+					fullscreenIcon.setAttribute('data-lucide', 'maximize');
+				}
+				lucide.createIcons();
+			}
 
-            fullscreenBtn.addEventListener('click', () => {
-                if (!document.fullscreenElement) {
-                    document.documentElement.requestFullscreen();
-                } else {
-                    if (document.exitFullscreen) {
-                        document.exitFullscreen();
-                    }
-                }
-            });
+			fullscreenBtn.addEventListener('click', () => {
+				if (!document.fullscreenElement) {
+					document.documentElement.requestFullscreen();
+				} else {
+					if (document.exitFullscreen) {
+						document.exitFullscreen();
+					}
+				}
+			});
 
-            document.addEventListener('fullscreenchange', updateFullscreenButton);
+			document.addEventListener('fullscreenchange', updateFullscreenButton);
 
-            // Inicializar el estado del botón
-            updateFullscreenButton();
-        });
-    </script>
+			// Inicializar el estado del botón
+			updateFullscreenButton();
+		});
+	</script>
 </body>
 
 </html>
