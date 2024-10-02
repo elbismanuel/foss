@@ -2,219 +2,231 @@
 <html lang="es">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>FOSS Presentación</title>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-	<script src="https://cdn.tailwindcss.com"></script>
-	<script src="https://unpkg.com/lucide@latest"></script>
-	<script>
-		tailwind.config = {
-			theme: {
-				extend: {
-					backgroundImage: {
-						'code-bg': "url('img/side.png')",
-					}
-				}
-			}
-		}
-	</script>
-	<style>
-		body {
-			font-family: 'Rubik', sans-serif;
-		}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOSS Presentación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    backgroundImage: {
+                        'code-bg': "url('img/side.png')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+        }
 
-		.reveal .slides section {
-			top: 0 !important;
-		}
+        .reveal .slides section {
+            top: 0 !important;
+        }
 
-		.reveal .slides>section {
-			padding: 0;
-		}
+        .reveal .slides>section {
+            padding: 0;
+        }
 
-		.reveal {
-			position: relative;
-			width: 100%;
-			height: 100%;
-		}
+        .reveal {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
 
-		html,
-		body,
-		.reveal,
-		.slides,
-		section {
-			height: 100vh;
-			margin: 0;
-			padding: 0;
-		}
+        html,
+        body,
+        .reveal,
+        .slides,
+        section {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
 
-		.icon-carousel img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			opacity: 0;
-			transition: opacity 0.5s ease-in-out;
-		}
+        .icon-carousel img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
 
-		.icon-carousel img.active {
-			opacity: 1;
-		}
+        .icon-carousel img.active {
+            opacity: 1;
+        }
 
-		#fullscreenBtn {
-			z-index: 1000;
-		}
-	</style>
+        #fullscreenBtn {
+            z-index: 1000;
+        }
+    </style>
 </head>
 
 <body class="relative">
-	<div class="reveal">
-		<div class="slides">
-			<!-- Primera diapositiva (sin cambios) -->
-			<section>
-				<div class="flex h-full">
-					<!-- Columna izquierda (60%) -->
-					<div class="w-3/5 relative bg-code-bg bg-cover bg-center">
-						<div class="absolute inset-0 flex items-center justify-center icon-carousel">
-							<img src="img/foss.png" alt="Logo FOSS" class="w-1/4 h-auto active">
-							<img src="img/tux.png" alt="Logo Linux" class="w-1/4 h-auto">
-							<img src="img/bsd.png" alt="Logo BSD" class="w-1/4 h-auto">
-							<img src="img/gnu.png" alt="Logo GNU" class="w-1/4 h-auto">
-						</div>
-					</div>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Primera diapositiva (actualizada) -->
+            <section>
+                <div class="flex h-full">
+                    <!-- Columna izquierda (60%) -->
+                    <div class="w-3/5 relative bg-code-bg bg-cover bg-center">
+                        <div class="absolute inset-0 flex items-center justify-center icon-carousel">
+                            <img src="img/foss.png" alt="Logo FOSS" class="w-1/4 h-auto active">
+                            <img src="img/tux.png" alt="Logo Linux" class="w-1/4 h-auto">
+                            <img src="img/bsd.png" alt="Logo BSD" class="w-1/4 h-auto">
+                            <img src="img/gnu.png" alt="Logo GNU" class="w-1/4 h-auto">
+                        </div>
+                    </div>
 
-					<!-- Columna derecha (40%) -->
-					<div class="w-2/5 flex flex-col p-8 bg-gray-100 relative">
-						<div class="flex flex-col justify-between h-full">
-							<div>
-								<!-- Imagen de perfil -->
-								<div class="flex justify-center mb-8">
-									<img src="img/profile.png" alt="Perfil de Elbis Flores"
-										class="w-32 h-32 rounded-full shadow-lg animate__animated animate__fadeIn">
-								</div>
+                    <!-- Columna derecha (40%) -->
+                    <div class="w-2/5 flex flex-col p-8 bg-gray-100 relative">
+                        <div class="flex flex-col justify-between h-full">
+                            <div>
+                                <!-- Imagen de perfil -->
+                                <div class="flex justify-center mb-8">
+                                    <img src="img/profile.png" alt="Perfil de Elbis Flores"
+                                        class="w-32 h-32 rounded-full shadow-lg animate__animated animate__fadeIn">
+                                </div>
 
-								<!-- Contenido -->
-								<div class="text-center">
-									<h1 class="text-3xl font-bold mb-4 animate__animated animate__slideInRight">Elbis Flores</h1>
-									<p id="bio" class="pt-10 text-2xl mb-4 animate__animated animate__fadeIn animate__delay-1s text-left">
-										Con <span id="yearsExperience">15</span> años de experiencia en <strong>tecnología</strong> y <strong>desarrollo de aplicaciones</strong> 🚀, mi pasión por la tecnología sigue creciendo día a día 💻. Actualmente, lidero la <strong>dirección de arquitectura tecnológica</strong> en la Autoridad Nacional para la Innovación Gubernamental (AIG), donde buscamos innovar y mejorar los servicios públicos mediante soluciones tecnológicas eficientes.
+                                <!-- Contenido -->
+                                <div class="text-center">
+                                    <h1 class="text-3xl font-bold mb-4 animate__animated animate__slideInRight">Elbis Flores</h1>
+                                    <p id="bio" class="pt-10 text-2xl mb-4 animate__animated animate__fadeIn animate__delay-1s text-left">
+                                        Con <span id="yearsExperience">15</span> años de experiencia en <strong>tecnología</strong> y <strong>desarrollo de aplicaciones</strong> 🚀, mi pasión por la tecnología sigue creciendo día a día 💻. Actualmente, lidero la <strong>dirección de arquitectura tecnológica</strong> en la Autoridad Nacional para la Innovación Gubernamental (AIG), donde buscamos innovar y mejorar los servicios públicos mediante soluciones tecnológicas eficientes.
+                                    </p>
+                                </div>
+                            </div>
 
-									</p>
-								</div>
-							</div>
+                            <div class="text-center">
+                                <a href="https://aig.gob.pa" target="_blank" rel="noopener"
+                                    class="text-blue-600 hover:text-blue-800 underline">aig.gob.pa</a>
+                            </div>
+                        </div>
 
-							<div class="text-center">
-								<a href="https://aig.gob.pa" target="_blank" rel="noopener"
-									class="text-blue-600 hover:text-blue-800 underline">aig.gob.pa</a>
-							</div>
-						</div>
+                        <!-- Texto AIG FOSS 2024 y redes sociales -->
+                        <div class="absolute bottom-0 left-0 right-0 pb-2">
+                            <div class="flex justify-between items-center px-4">
+                                <p id="aigFossText" class="text-sm font-bold animate__animated animate__fadeIn animate__delay-3s"></p>
+                                <div class="flex space-x-4">
+                                    <a href="https://twitter.com/elbisflores" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-600">
+                                        <i data-lucide="twitter" class="w-6 h-6"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/elbisflores/" target="_blank" rel="noopener" class="text-blue-700 hover:text-blue-900">
+                                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                                    </a>
+                                    <a href="https://github.com/elbismanuel" target="_blank" rel="noopener" class="text-gray-800 hover:text-gray-600">
+                                        <i data-lucide="github" class="w-6 h-6"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-						<!-- Texto AIG FOSS 2024 -->
-						<div class="absolute bottom-0 left-0 right-0 text-center pb-2">
-							<p id="aigFossText" class="text-sm font-bold animate__animated animate__fadeIn animate__delay-3s"></p>
-						</div>
-					</div>
-				</div>
-			</section>
+            <!-- Nueva plantilla para las siguientes diapositivas -->
+            <section>
+                <div class="flex flex-col h-full">
+                    <!-- Cabecera con imagen de fondo reducida -->
+                    <div class="h-1/5 bg-code-bg bg-cover bg-center relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                            <h2 class="text-white text-4xl font-bold">
+                                ¿Que es FOSS?
+                            </h2>
+                        </div>
+                    </div>
 
-			<!-- Nueva plantilla para las siguientes diapositivas -->
-			<section>
-				<div class="flex flex-col h-full">
-					<!-- Cabecera con imagen de fondo reducida -->
-					<div class="h-1/5 bg-code-bg bg-cover bg-center relative">
-						<div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-							<h2 class="text-white text-4xl font-bold">
-								¿Que es FOSS?
-							</h2>
-						</div>
-					</div>
+                    <!-- Contenido principal -->
+                    <div class="flex-grow p-8 bg-gray-100 overflow-auto">
 
-					<!-- Contenido principal -->
-					<div class="flex-grow p-8 bg-gray-100 overflow-auto">
+                    </div>
 
-					</div>
+                </div>
+            </section>
+        </div>
+    </div>
 
-				</div>
-			</section>
-		</div>
-	</div>
+    <!-- Botón de pantalla completa -->
+    <button id="fullscreenBtn"
+        class="fixed bottom-4 left-4 bg-blue-500 hover:bg-blue-700 text-white font-bold p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110" title="Pantalla completa">
+        <i data-lucide="maximize" class="w-6 h-6"></i>
+    </button>
 
-	<!-- Botón de pantalla completa -->
-	<button id="fullscreenBtn"
-		class="fixed bottom-4 left-4 bg-blue-500 hover:bg-blue-700 text-white font-bold p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110" title="Pantalla completa">
-		<i data-lucide="maximize" class="w-6 h-6"></i>
-	</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            width: "100%",
+            height: "100%",
+            margin: 0,
+            minScale: 1,
+            maxScale: 1,
+            center: false,
+            hash: true,
+            scale: 1.25, 
+        });
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
-	<script>
-		Reveal.initialize({
-			width: "100%",
-			height: "100%",
-			margin: 0,
-			minScale: 1,
-			maxScale: 1,
-			center: false,
-			hash: true,
-			scale: 1.25, 
-		});
+        document.addEventListener('DOMContentLoaded', function () {
+            lucide.createIcons();
 
-		document.addEventListener('DOMContentLoaded', function () {
-			lucide.createIcons();
+            const currentYear = new Date().getFullYear();
+            document.getElementById('aigFossText').textContent = `AIG FOSS ${currentYear}`;
 
-			const currentYear = new Date().getFullYear();
-			document.getElementById('aigFossText').textContent = `AIG FOSS ${currentYear}`;
+            // Contador de años de experiencia
+            let years = 0;
+            const countUp = setInterval(() => {
+                years++;
+                document.getElementById('yearsExperience').textContent = years;
+                if (years >= 15) clearInterval(countUp);
+            }, 100);
 
-			// Contador de años de experiencia
-			let years = 0;
-			const countUp = setInterval(() => {
-				years++;
-				document.getElementById('yearsExperience').textContent = years;
-				if (years >= 15) clearInterval(countUp);
-			}, 100);
+            // Carrusel de iconos
+            const icons = document.querySelectorAll('.icon-carousel img');
+            let currentIcon = 0;
 
-			// Carrusel de iconos
-			const icons = document.querySelectorAll('.icon-carousel img');
-			let currentIcon = 0;
+            function showNextIcon() {
+                icons[currentIcon].classList.remove('active');
+                currentIcon = (currentIcon + 1) % icons.length;
+                icons[currentIcon].classList.add('active');
+            }
 
-			function showNextIcon() {
-				icons[currentIcon].classList.remove('active');
-				currentIcon = (currentIcon + 1) % icons.length;
-				icons[currentIcon].classList.add('active');
-			}
+            setInterval(showNextIcon, 3000);
 
-			setInterval(showNextIcon, 3000);
+            // Función de pantalla completa
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            const fullscreenIcon = fullscreenBtn.querySelector('i');
 
-			// Función de pantalla completa
-			const fullscreenBtn = document.getElementById('fullscreenBtn');
-			const fullscreenIcon = fullscreenBtn.querySelector('i');
+            function updateFullscreenButton() {
+                if (document.fullscreenElement) {
+                    fullscreenIcon.setAttribute('data-lucide', 'minimize');
+                } else {
+                    fullscreenIcon.setAttribute('data-lucide', 'maximize');
+                }
+                lucide.createIcons();
+            }
 
-			function updateFullscreenButton() {
-				if (document.fullscreenElement) {
-					fullscreenIcon.setAttribute('data-lucide', 'minimize');
-				} else {
-					fullscreenIcon.setAttribute('data-lucide', 'maximize');
-				}
-				lucide.createIcons();
-			}
+            fullscreenBtn.addEventListener('click', () => {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    }
+                }
+            });
 
-			fullscreenBtn.addEventListener('click', () => {
-				if (!document.fullscreenElement) {
-					document.documentElement.requestFullscreen();
-				} else {
-					if (document.exitFullscreen) {
-						document.exitFullscreen();
-					}
-				}
-			});
+            document.addEventListener('fullscreenchange', updateFullscreenButton);
 
-			document.addEventListener('fullscreenchange', updateFullscreenButton);
-
-			// Inicializar el estado del botón
-			updateFullscreenButton();
-		});
-	</script>
+            // Inicializar el estado del botón
+            updateFullscreenButton();
+        });
+    </script>
 </body>
 
 </html>
