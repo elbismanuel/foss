@@ -4,10 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="theme-color" content="#202A3B">
+		<meta name="description" content="Presentación de Elbis Flores en el evento AIG FOSS 2024">
+
     <title>FOSS Presentación</title>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -71,6 +75,15 @@
             .icon-carousel {
                 display: none;
             }
+        }
+
+        /* Asegurar que los controles sean visibles en móviles */
+        .reveal .controls {
+            display: block !important;
+        }
+
+        .reveal .controls button {
+            color: #fff !important;
         }
     </style>
 </head>
@@ -178,6 +191,16 @@
             maxScale: 1.5,
             center: false,
             hash: true,
+            controls: true,
+            controlsTutorial: true,
+            controlsLayout: 'bottom-right',
+            controlsBackArrows: 'visible',
+            progress: true,
+            slideNumber: false,
+            touch: true,
+            loop: false,
+            rtl: false,
+            navigationMode: 'default',
         });
 
         document.addEventListener('DOMContentLoaded', function () {
