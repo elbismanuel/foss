@@ -26,437 +26,404 @@
 	</script>
 	<style>
 		body {
-			font-family: 'Rubik', sans-serif;
-		}
-
-		.reveal .slides section {
-			top: 0 !important;
-		}
-
-		.reveal .slides>section {
-			padding: 0;
+			font-family: 'Inter', sans-serif;
+			background-color: #ffffff;
 		}
 
 		.reveal {
-			position: relative;
-			width: 100%;
-			height: 100%;
-			font-size: 16px;
+			font-family: 'Inter', sans-serif;
 		}
 
-		html,
-		body,
-		.reveal,
-		.slides,
-		section {
+		.reveal .slides section {
 			height: 100vh;
-			margin: 0;
-			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 
-		.icon-carousel img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			opacity: 0;
-			transition: opacity 0.5s ease-in-out;
+		.profile-section {
+			background: #ffffff;
+			color: #1f2937;
 		}
 
-		.icon-carousel img.active {
-			opacity: 1;
+		.nav-hint {
+			padding: 0.5rem 1rem;
+			border-radius: 0.375rem;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			background: rgba(0, 0, 0, 0.05);
+			color: #4b5563;
+			font-size: 0.875rem;
+		}
+
+		.disclaimer-section {
+			background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+			color: white;
+		}
+
+		.disclaimer-content {
+			max-width: 800px;
+			padding: 3rem;
+			text-align: center;
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(10px);
+			border-radius: 1rem;
+			border: 1px solid rgba(255, 255, 255, 0.2);
+		}
+
+		.tool-section {
+			height: 100vh !important;
+			width: 100vw !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+
+		.feature-list li {
+			display: flex;
+			align-items: start;
+			margin-bottom: 0.75rem;
+			gap: 0.5rem;
+		}
+
+		.feature-list li::before {
+			content: "→";
+			color: currentColor;
+			font-weight: 500;
+		}
+
+		.reveal .slides section.tool-section {
+			padding: 0 !important;
+			top: 0 !important;
+			margin: 0 !important;
 		}
 
 		#fullscreenBtn {
+			position: fixed;
+			bottom: 1rem;
+			left: 1rem;
 			z-index: 1000;
-		}
-
-		@media (max-width: 768px) {
-			.icon-carousel {
-				display: none;
-			}
-		}
-
-		.reveal .controls {
-			color: #000 !important;
-		}
-
-		.reveal .controls button {
-			color: #000 !important;
-			opacity: 0.7;
-		}
-
-		.reveal .controls button:hover {
-			opacity: 1;
-		}
-
-		@media (max-width: 640px) {
-			.reveal {
-				font-size: 14px;
-			}
-		}
-
-		.advantage-card {
-			transition: transform 0.3s ease-in-out;
-		}
-
-		.advantage-card:hover {
-			transform: scale(1.05);
-		}
-
-		.country-card {
-			transition: transform 0.3s ease-in-out;
-		}
-
-		.country-card:hover {
-			transform: scale(1.05);
-		}
-
-		.slide-content {
-			height: 100%;
-			overflow-y: auto;
-			padding-bottom: 2rem;
-		}
-
-		.slide-header {
-			position: sticky;
-			top: 0;
-			z-index: 10;
-		}
-
-		.advantage-grid,
-		.country-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			gap: 1rem;
-		}
-
-		@media (max-width: 640px) {
-			.slide-header h2 {
-				font-size: 1.5rem;
-			}
-		}
-
-		@keyframes slideInRight {
-			from {
-				transform: translateX(-100%);
-				opacity: 0;
-			}
-
-			to {
-				transform: translateX(0);
-				opacity: 1;
-			}
-		}
-
-		.animated-image {
-			position: absolute;
-			right: 0;
-			top: 50%;
-			transform: translateY(-50%);
-			animation: slideInRight 1s ease-out forwards;
-			z-index: 10;
-		}
-
-		@media (max-width: 768px) {
-			.animated-image {
-				display: none;
-			}
-		}
-
-		.stallman-image {
-			transition: transform 0.5s ease-in-out;
-		}
-
-		.stallman-image:hover {
-			transform: rotate(360deg) scale(1.1);
-		}
-
-		@keyframes bounce {
-
-			0%,
-			20%,
-			50%,
-			80%,
-			100% {
-				transform: translateY(0);
-			}
-
-			40% {
-				transform: translateY(-30px);
-			}
-
-			60% {
-				transform: translateY(-15px);
-			}
-		}
-
-		.bounce {
-			animation: bounce 2s;
 		}
 	</style>
 </head>
 
-<body class="relative">
+<body class="relative.">
 	<div class="reveal">
 		<div class="slides">
-			<!-- Primera diapositiva -->
-			<section>
-				<div class="flex flex-col md:flex-row h-full">
-					<!-- Columna izquierda (60% en escritorio, 100% en móvil) -->
-					<div class="w-full md:w-3/5 h-1/3 md:h-full relative bg-code-bg bg-cover bg-center">
-						<div class="absolute inset-0 flex items-center justify-center icon-carousel">
-							<img src="img/foss.png" alt="Logo FOSS" class="w-1/4 md:w-1/3 h-auto active">
-							<img src="img/tux.png" alt="Logo Linux" class="w-1/4 md:w-1/3 h-auto">
-							<img src="img/gnu.png" alt="Logo GNU" class="w-1/4 md:w-1/3 h-auto">
-							<img src="img/firefox.png" alt="Logo Firefox" class="w-1/4 md:w-1/3 h-auto">
-							<img src="img/wordpress.png" alt="Logo Wordpress" class="w-1/4 md:w-1/3 h-auto">
-							<img src="img/php.png" alt="Logo PHP" class="w-1/4 md:w-1/3 h-auto">
-							<img src="img/python.png" alt="Logo Python" class="w-1/4 md:w-1/3 h-auto">
-							<img src="img/gimp.png" alt="Logo Gimp" class="w-1/4 md:w-1/3 h-auto">
-							<img src="img/libreoffice.png" alt="Logo Libre Office" class="w-1/4 md:w-1/3 h-auto">
-						</div>
-					</div>
+			<section
+				class="min-h-screen w-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700">
+				<div class="max-w-6xl mx-auto p-6 flex flex-col justify-between h-screen py-16">
+					<!-- Contenido Principal -->
+					<div class="backdrop-blur-sm bg-white/10 rounded-2xl border border-white/20 shadow-2xl p-8 md:p-12 mb-8">
+						<div class="text-center space-y-8">
+							<div class="space-y-4">
+								<h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">FOSS en Gobierno</h2>
+								<p class="text-xl text-white/90">Segunda Sesión: Herramientas de Alto Impacto</p>
+								<p class="text-lg text-white/80 italic">Por Elbis Flores</p>
+							</div>
 
-					<!-- Columna derecha (40% en escritorio, 100% en móvil) -->
-					<div class="w-full md:w-2/5 flex flex-col p-4 md:p-8 bg-gray-100 relative">
-						<div class="flex flex-col justify-between h-full">
-							<div class="flex-grow flex flex-col justify-center items-center">
-								<!-- Imagen de perfil -->
-								<div class="mb-4">
-									<img src="img/profile.png" alt="Perfil de Elbis Flores"
-										class="w-24 h-24 md:w-32 md:h-32 rounded-full shadow-lg animate__animated animate__fadeIn">
-								</div>
+							<div class="max-w-3xl mx-auto mt-8">
+								<p class="text-xl text-white/90 leading-relaxed">
+									Exploraremos cuatro herramientas de código abierto que han demostrado
+									su robustez y eficiencia en entornos gubernamentales a nivel mundial:
+								</p>
+							</div>
 
-								<!-- Contenido -->
-								<div class="text-center">
-									<h1 class="text-xl md:text-2xl font-bold mb-2 animate__animated animate__slideInRight">Elbis Flores
-									</h1>
-									<!-- Redes sociales -->
-									<div class="flex justify-center space-x-4 mb-4">
-										<a href="https://twitter.com/elbisflores" target="_blank" rel="noopener"
-											class="text-blue-600 hover:text-blue-800">
-											<i data-lucide="twitter" class="w-4 h-4 md:w-5 md:h-5"></i>
-										</a>
-										<a href="https://www.linkedin.com/in/elbisflores/" target="_blank" rel="noopener"
-											class="text-blue-600 hover:text-blue-800">
-											<i data-lucide="linkedin" class="w-4 h-4 md:w-5 md:h-5"></i>
-										</a>
-										<a href="https://github.com/elbismanuel" target="_blank" rel="noopener"
-											class="text-blue-600 hover:text-blue-800">
-											<i data-lucide="github" class="w-4 h-4 md:w-5 md:h-5"></i>
-										</a>
+							<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+								<!-- Ubuntu Server -->
+								<div class="text-center space-y-4">
+									<div
+										class="bg-white/10 rounded-xl p-4 aspect-square flex items-center justify-center hover:bg-white/20 transition-all">
+										<img src="img/ubuntu-server.png" alt="Ubuntu Server" class="w-24 h-24 object-contain">
 									</div>
-									<p id="bio"
-										class="text-xs md:text-sm lg:text-2xl mt-2 mb-4 animate__animated animate__fadeIn animate__delay-1s text-left">
-										Con <span id="yearsExperience">15</span> años de experiencia en <strong>tecnología</strong> y
-										<strong>desarrollo de aplicaciones</strong> 🚀, mi pasión por la tecnología sigue creciendo día a
-										día 💻. Actualmente, lidero la <strong>dirección de arquitectura tecnológica</strong> en la
-										Autoridad Nacional para la Innovación Gubernamental (AIG), donde buscamos innovar y mejorar los
-										servicios públicos mediante soluciones tecnológicas eficientes.
-									</p>
+									<p class="text-white font-semibold">Ubuntu Server</p>
+									<p class="text-sm text-white/70">Infraestructura Robusta</p>
 								</div>
-							</div>
 
-							<div class="text-center mt-4">
-								<a href="https://aig.gob.pa" target="_blank" rel="noopener"
-									class="text-blue-600 hover:text-blue-800 underline text-xs md:text-sm">aig.gob.pa</a>
-								<!-- Texto AIG FOSS 2024 -->
-								<p id="aigFossText"
-									class="text-xs md:text-sm font-bold mt-2 animate__animated animate__fadeIn animate__delay-3s"></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- Segunda diapositiva (¿Qué es FOSS?) -->
-			<section class="bg-gradient-to-br from-blue-100 to-purple-100">
-				<div class="flex flex-col h-full">
-					<!-- Cabecera con imagen de fondo reducida -->
-					<div class="h-1/5 bg-code-bg bg-cover bg-center relative slide-header">
-						<div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-							<h2
-								class="text-white text-2xl md:text-3xl lg:text-4xl font-bold px-4 text-center animate__animated animate__fadeInDown">
-								¿Qué es FOSS?
-							</h2>
-						</div>
-					</div>
-
-					<!-- Contenido principal -->
-					<div class="flex-grow p-4 md:p-8 flex items-center justify-center slide-content">
-						<div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 max-w-4xl w-full animate__animated animate__fadeIn">
-							<div class="flex flex-col md:flex-row items-center justify-between">
-								<div class="text-sm md:text-base lg:text-lg space-y-4 md:w-2/3">
-									<p class="mb-4 text-gray-800 leading-relaxed">
-										<span class="text-blue-600 font-semibold text-xl md:text-2xl">FOSS</span>, acrónimo de "Free and
-										Open
-										Source Software" (Software Libre y de Código Abierto), representa una filosofía revolucionaria en el
-										mundo del desarrollo de software.
-									</p>
-									<div class="flex flex-col gap-4">
-										<div class="bg-blue-50 p-4 rounded-lg">
-											<h3 class="text-blue-700 font-bold mb-2">Libre (Free)</h3>
-											<p class="text-blue-800">
-												"Libre" se refiere a la libertad, no al precio. Los usuarios tienen la libertad de ejecutar,
-												copiar, distribuir, estudiar, modificar y mejorar el software según sus necesidades.
-											</p>
-										</div>
-										<div class="bg-purple-50 p-4 rounded-lg">
-											<h3 class="text-purple-700 font-bold mb-2">Código Abierto (Open Source)</h3>
-											<p class="text-purple-800">
-												El código fuente del software está disponible públicamente. Esto permite a cualquier persona ver
-												cómo funciona el programa y modificarlo, fomentando la colaboración y la innovación.
-											</p>
-										</div>
+								<!-- Chromium -->
+								<div class="text-center space-y-4">
+									<div
+										class="bg-white/10 rounded-xl p-4 aspect-square flex items-center justify-center hover:bg-white/20 transition-all">
+										<img src="img/chrome.png" alt="Chromium" class="w-24 h-24 object-contain">
 									</div>
+									<p class="text-white font-semibold">Chromium</p>
+									<p class="text-sm text-white/70">Navegación Segura</p>
 								</div>
-								<div class="md:w-1/3 mt-6 md:mt-0 flex flex-col items-center">
-									<img src="img/stallman.jpg" alt="Richard Stallman"
-										class="w-48 h-48 rounded-full object-cover shadow-lg stallman-image bounce">
-									<p class="text-center mt-4 text-sm text-gray-600 italic">"El software propietario es una herramienta de control. Si no tienes acceso al código fuente, no tienes control sobre tu propia computadora." - Richard Stallman</p>
+
+								<!-- QGIS -->
+								<div class="text-center space-y-4">
+									<div
+										class="bg-white/10 rounded-xl p-4 aspect-square flex items-center justify-center hover:bg-white/20 transition-all">
+										<img src="img/qgis.png" alt="QGIS" class="w-24 h-24 object-contain">
+									</div>
+									<p class="text-white font-semibold">QGIS</p>
+									<p class="text-sm text-white/70">Análisis Geoespacial</p>
+								</div>
+
+								<!-- PostgreSQL -->
+								<div class="text-center space-y-4">
+									<div
+										class="bg-white/10 rounded-xl p-4 aspect-square flex items-center justify-center hover:bg-white/20 transition-all">
+										<img src="img/postgresql.png" alt="PostgreSQL" class="w-24 h-24 object-contain">
+									</div>
+									<p class="text-white font-semibold">PostgreSQL</p>
+									<p class="text-sm text-white/70">Gestión de Datos</p>
 								</div>
 							</div>
+						</div>
+					</div>
+
+					<!-- Disclaimer más compacto -->
+					<div class="backdrop-blur-sm bg-white/5 rounded-xl border border-white/10 p-6 max-w-3xl mx-auto">
+						<div class="text-center space-y-3">
+							<p class="text-sm text-white/80 leading-relaxed">
+								Las herramientas FOSS presentadas son recomendaciones basadas en experiencias exitosas
+								y cada organización debe evaluar sus necesidades específicas para determinar la mejor solución.
+							</p>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<!-- Tercera diapositiva (Ventajas clave de FOSS) -->
-			<section class="bg-gradient-to-br from-green-100 to-blue-100" data-slide-index="2">
-				<div class="flex flex-col h-full">
-					<div class="h-1/5 bg-code-bg bg-cover bg-center relative slide-header">
-						<div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-							<h2
-								class="text-white text-2xl md:text-3xl lg:text-4xl font-bold px-4 text-center animate__animated animate__fadeInDown">
-								Ventajas Clave de FOSS 🚀
-							</h2>
+			<!-- Ubuntu Server -->
+			<section class="tool-section bg-gradient-to-br from-[#2C001E] via-[#772953] to-[#E95420]" data-id="ubuntu-server">
+				<div class="h-screen w-screen flex items-center justify-center">
+						<div class="w-full max-w-6xl px-4">
+								<div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 border-l-4 border-[#E95420]">
+										<div class="grid md:grid-cols-2 gap-12 items-center">
+												<div class="space-y-8 order-2 md:order-1">
+														<div class="rounded-xl flex items-center justify-center p-6 bg-gradient-to-br from-white/50 to-white/30 backdrop-blur-sm">
+																<div class="relative group">
+																		<div class="absolute -inset-0.5 bg-gradient-to-r from-[#E95420] to-[#772953] opacity-20 group-hover:opacity-30 transition duration-300 rounded-full blur">
+																		</div>
+																		<img src="img/ubuntu-server.png" alt="Ubuntu Server" 
+																				 class="max-h-64 max-w-full object-contain mx-auto relative drop-shadow-xl hover:scale-105 transition-transform duration-300">
+																</div>
+														</div>
+												</div>
+		
+												<div class="order-1 md:order-2">
+														<div class="mb-8">
+																<div class="flex items-center gap-3 mb-2">
+																		<h2 class="text-3xl font-bold text-[#2C001E]">Ubuntu Server</h2>
+																		<span class="px-3 py-1 text-sm bg-[#FDF6F3] text-[#E95420] rounded-full">🖥️ Server OS</span>
+																</div>
+																<p class="text-gray-600">Sistema operativo de servidor líder en el mundo FOSS</p>
+														</div>
+		
+														<div class="mb-8">
+																<h3 class="text-xl font-semibold text-[#E95420] mb-4 flex items-center gap-2">
+																		<span>🌍 Servicios que Confían en Ubuntu</span>
+																</h3>
+																<ul class="feature-list text-gray-700 space-y-3">
+																		<li class="transform hover:translate-x-1 transition-transform">🎬 Netflix: Streaming global</li>
+																		<li class="transform hover:translate-x-1 transition-transform">🎵 Spotify: Música en streaming</li>
+																		<li class="transform hover:translate-x-1 transition-transform">🚗 Uber: Servicios de transporte</li>
+																		<li class="transform hover:translate-x-1 transition-transform">📦 Amazon: Comercio electrónico</li>
+																</ul>
+														</div>
+		
+														<div class="bg-gradient-to-br from-[#FDF6F3] to-[#FFEEE9] rounded-xl p-6 shadow-inner">
+																<h3 class="text-xl font-semibold text-[#E95420] mb-4">⚡ Casos de Uso Destacados</h3>
+																<div class="grid grid-cols-2 gap-6">
+																		<ul class="feature-list text-gray-700">
+																				<li class="transform hover:translate-x-1 transition-transform">☁️ AWS Cloud</li>
+																				<li class="transform hover:translate-x-1 transition-transform">🔬 CERN</li>
+																				<li class="transform hover:translate-x-1 transition-transform">🏦 Banco Santander</li>
+																		</ul>
+																		<ul class="feature-list text-gray-700">
+																				<li class="transform hover:translate-x-1 transition-transform">🎮 PlayStation Network</li>
+																				<li class="transform hover:translate-x-1 transition-transform">📱 Instagram</li>
+																				<li class="transform hover:translate-x-1 transition-transform">🛒 Walmart</li>
+																		</ul>
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
 						</div>
-					</div>
-
-					<div class="flex-grow p-4 md:p-8 flex items-center justify-center slide-content">
-						<div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 max-w-4xl w-full">
-							<div class="advantage-grid">
-								<div class="advantage-card bg-yellow-50 p-4 rounded-lg opacity-1">
-									<h3 class="text-yellow-700 font-bold mb-2 text-lg md:text-xl">💰 Reducción de Costos</h3>
-									<p class="text-yellow-800 text-sm md:text-base">
-										Reduce costos al eliminar licencias innecesarias y optimizar el uso de hardware.
-									</p>
-								</div>
-								<div class="advantage-card bg-blue-50 p-4 rounded-lg opacity-1">
-									<h3 class="text-blue-700 font-bold mb-2 text-lg md:text-xl">🔓 Independencia de Proveedores</h3>
-									<p class="text-blue-800 text-sm md:text-base">
-										Evita depender de un solo proveedor, brindando mayor libertad tecnológica y competitividad.
-									</p>
-								</div>
-								<div class="advantage-card bg-green-50 p-4 rounded-lg opacity-1">
-									<h3 class="text-green-700 font-bold mb-2 text-lg md:text-xl">🛠️ Flexibilidad en Personalización</h3>
-									<p class="text-green-800 text-sm md:text-base">
-										Permite adaptar el software a necesidades específicas sin restricciones de licencias.
-									</p>
-								</div>
-								<div class="advantage-card bg-purple-50 p-4 rounded-lg opacity-1">
-									<h3 class="text-purple-700 font-bold mb-2 text-lg md:text-xl">🏛️ Soberanía Tecnológica</h3>
-									<p class="text-purple-800 text-sm md:text-base">
-										Otorga control total sobre las soluciones tecnológicas y mejora la seguridad nacional.
-									</p>
-								</div>
-								<div class="advantage-card bg-red-50 p-4 rounded-lg opacity-1">
-									<h3 class="text-red-700 font-bold mb-2 text-lg md:text-xl">🌍 Soporte Global</h3>
-									<p class="text-red-800 text-sm md:text-base">
-										Accede a una red global de soporte y actualizaciones constantes, mejorando la colaboración.
-									</p>
-								</div>
-								<div class="advantage-card bg-teal-50 p-4 rounded-lg opacity-1">
-									<h3 class="text-teal-700 font-bold mb-2 text-lg md:text-xl">🔍 Transparencia y Auditoría</h3>
-									<p class="text-teal-800 text-sm md:text-base">
-										El código abierto permite auditorías públicas, asegurando transparencia y seguridad.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
-			</section>
+		</section>
 
-			<!-- Cuarta diapositiva (Ejemplos de países) -->
-			<section class="bg-gradient-to-br from-indigo-100 to-pink-100">
-				<div class="flex flex-col h-full">
-					<div class="h-1/5 bg-code-bg bg-cover bg-center relative slide-header">
-						<div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-							<h2
-								class="text-white text-2xl md:text-3xl lg:text-4xl font-bold px-4 text-center animate__animated animate__fadeInDown">
-								Éxito de FOSS en el Sector Público 🌎
-							</h2>
+			<!-- Chromium -->
+			<section class="tool-section bg-gradient-to-br from-blue-500 via-blue-400 to-blue-300" data-id="chromium">
+				<div class="h-screen w-screen flex items-center justify-center">
+						<div class="w-full max-w-6xl px-4">
+								<div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 border-l-4 border-[#4285F4]">
+										<div class="grid md:grid-cols-2 gap-12 items-center">
+												<div class="space-y-8 order-2 md:order-1">
+														<div class="rounded-xl flex items-center justify-center p-6 bg-gradient-to-br from-white/50 to-white/30 backdrop-blur-sm">
+																<div class="relative group">
+																		<div class="absolute -inset-0.5 bg-gradient-to-r from-[#4285F4] to-[#34A853] opacity-20 group-hover:opacity-30 transition duration-300 rounded-full blur">
+																		</div>
+																		<img src="img/chrome.png" alt="Chromium" 
+																				 class="max-h-64 max-w-full object-contain mx-auto relative drop-shadow-xl hover:scale-105 transition-transform duration-300">
+																</div>
+														</div>
+												</div>
+		
+												<div class="order-1 md:order-2">
+														<div class="mb-8">
+																<div class="flex items-center gap-3 mb-2">
+																		<h2 class="text-3xl font-bold text-[#4285F4]">Chromium</h2>
+																		<span class="px-3 py-1 text-sm bg-blue-100 text-blue-600 rounded-full">🌐 Open Source</span>
+																</div>
+																<p class="text-gray-600">Motor de navegación web open source más usado del mundo</p>
+														</div>
+		
+														<div class="mb-8">
+																<h3 class="text-xl font-semibold text-[#4285F4] mb-4 flex items-center gap-2">
+																		<span>🌍 Impacto Global</span>
+																</h3>
+																<ul class="feature-list text-gray-700 space-y-3">
+																		<li class="transform hover:translate-x-1 transition-transform">🏗️ Base de Chrome, Edge, Opera y Brave</li>
+																		<li class="transform hover:translate-x-1 transition-transform">📊 Motor dominante en más del 70% de navegadores</li>
+																		<li class="transform hover:translate-x-1 transition-transform">🚀 Impulsor de estándares web modernos</li>
+																		<li class="transform hover:translate-x-1 transition-transform">💻 Fundamento de apps como VS Code y Slack</li>
+																</ul>
+														</div>
+		
+														<div class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl p-6 shadow-inner">
+																<h3 class="text-xl font-semibold text-[#4285F4] mb-4">⚡ Apps Populares con Electron</h3>
+																<div class="grid grid-cols-2 gap-6">
+																		<ul class="feature-list text-gray-700">
+																				<li class="transform hover:translate-x-1 transition-transform">👨‍💻 VS Code</li>
+																				<li class="transform hover:translate-x-1 transition-transform">💬 WhatsApp Desktop</li>
+																				<li class="transform hover:translate-x-1 transition-transform">🎨 Figma</li>
+																		</ul>
+																		<ul class="feature-list text-gray-700">
+																				<li class="transform hover:translate-x-1 transition-transform">💼 Slack</li>
+																				<li class="transform hover:translate-x-1 transition-transform">🎵 Spotify</li>
+																				<li class="transform hover:translate-x-1 transition-transform">📝 Notion</li>
+																		</ul>
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
 						</div>
-					</div>
-
-					<div class="flex-grow p-4 md:p-8 flex items-center justify-center slide-content">
-						<div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 max-w-4xl w-full">
-							<div class="country-grid">
-								<div class="country-card bg-red-50 p-4 rounded-lg">
-									<h3 class="text-red-700 font-bold mb-2 text-lg md:text-xl">
-										<span class="flag-icon flag-icon-es"></span> España
-									</h3>
-									<p class="text-red-800 text-sm md:text-base">
-										El gobierno de Valencia utiliza
-										<b>LliureX</b>, una distribución Linux educativa, en centros escolares
-										y entornos administrativos.
-									</p>
-								</div>
-								<div class="country-card bg-teal-50 p-4 rounded-lg">
-									<h3 class="text-teal-700 font-bold mb-2 text-lg md:text-xl">
-										<span class="flag-icon flag-icon-ar"></span> Argentina
-									</h3>
-									<p class="text-teal-800 text-sm md:text-base">
-										<b>Huayra</b> Linux es utilizado en el programa "Conectar Igualdad", entregando laptops con software
-										libre
-										a estudiantes.
-									</p>
-								</div>
-								<div class="country-card bg-yellow-50 p-4 rounded-lg">
-									<h3 class="text-yellow-700 font-bold mb-2 text-lg md:text-xl">
-										<span class="flag-icon flag-icon-br"></span> Brasil
-									</h3>
-									<p class="text-yellow-800 text-sm md:text-base">
-										Fue el primer país en migrar a sistemas de código abierto en la administración pública.
-									</p>
-								</div>
-
-								<div class="country-card bg-orange-50 p-4 rounded-lg">
-									<h3 class="text-orange-700 font-bold mb-2 text-lg md:text-xl">
-										<span class="flag-icon flag-icon-uy"></span> Uruguay
-									</h3>
-									<p class="text-orange-800 text-sm md:text-base">
-										<b>Plan Ceibal</b> distribuye dispositivos con software libre en escuelas públicas, promoviendo la
-										inclusión digital.
-									</p>
-								</div>
-								<div class="country-card bg-blue-50 p-4 rounded-lg">
-									<h3 class="text-blue-700 font-bold mb-2 text-lg md:text-xl">
-
-										<span class="flag-icon flag-icon-bg"></span> Bulgaria
-									</h3>
-									<p class="text-blue-800 text-sm md:text-base">
-										Cambió su Ley de Gobernanza Electrónica para exigir que todo el software desarrollado para la
-										administración pública sea de código abierto.
-
-									</p>
-								</div>
-								<div class="country-card bg-green-50 p-4 rounded-lg">
-									<h3 class="text-green-700 font-bold mb-2 text-lg md:text-xl">
-										<span class="flag-icon flag-icon-ec"></span> Ecuador
-									</h3>
-									<p class="text-green-800 text-sm md:text-base">
-										El 10 de abril de 2008, el gobierno ecuatoriano emitió el Decreto 1014 que consagra el uso de
-										software libre como política pública para las instituciones estatales del país.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
-			</section>
+		</section>
+
+			<!-- QGIS -->
+			<section class="tool-section bg-gradient-to-br from-[#589632] via-[#93B023] to-[#589632]" data-id="qgis">
+				<div class="h-screen w-screen flex items-center justify-center">
+						<div class="w-full max-w-6xl px-4">
+								<div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 border-l-4 border-[#589632]">
+										<div class="grid md:grid-cols-2 gap-12 items-center">
+												<div class="space-y-8 order-2 md:order-1">
+														<div class="rounded-xl flex items-center justify-center p-6 bg-gradient-to-br from-white/50 to-white/30 backdrop-blur-sm">
+																<div class="relative group">
+																		<div class="absolute -inset-0.5 bg-gradient-to-r from-[#589632] to-[#93B023] opacity-20 group-hover:opacity-30 transition duration-300 rounded-full blur">
+																		</div>
+																		<img src="img/qgis.png" alt="QGIS" 
+																				 class="max-h-64 max-w-full object-contain mx-auto relative drop-shadow-xl hover:scale-105 transition-transform duration-300">
+																</div>
+														</div>
+												</div>
+		
+												<div class="order-1 md:order-2">
+														<div class="mb-8">
+																<div class="flex items-center gap-3 mb-2">
+																		<h2 class="text-3xl font-bold text-[#589632]">QGIS</h2>
+																		<span class="px-3 py-1 text-sm bg-green-100 text-[#589632] rounded-full">🗺️ GIS Software</span>
+																</div>
+																<p class="text-gray-600">Sistema de Información Geográfica líder en código abierto</p>
+														</div>
+		
+														<div class="mb-8">
+																<h3 class="text-xl font-semibold text-[#589632] mb-4 flex items-center gap-2">
+																		<span>🌍 Casos de Uso Destacados</span>
+																</h3>
+																<ul class="feature-list text-gray-700 space-y-3">
+																		<li class="transform hover:translate-x-1 transition-transform">🛰️ NASA: Monitoreo satelital global</li>
+																		<li class="transform hover:translate-x-1 transition-transform">🌋 USGS: Monitoreo volcánico</li>
+																		<li class="transform hover:translate-x-1 transition-transform">🏘️ UN-Habitat: Planificación urbana</li>
+																		<li class="transform hover:translate-x-1 transition-transform">🗺️ OpenStreetMap: Cartografía mundial</li>
+																</ul>
+														</div>
+		
+														<div class="bg-gradient-to-br from-green-50 to-[#F0F7ED] rounded-xl p-6 shadow-inner">
+																<h3 class="text-xl font-semibold text-[#589632] mb-4">⚡ Aplicaciones Prácticas</h3>
+																<div class="grid grid-cols-2 gap-6">
+																		<ul class="feature-list text-gray-700">
+																				<li class="transform hover:translate-x-1 transition-transform">🌳 Gestión Forestal</li>
+																				<li class="transform hover:translate-x-1 transition-transform">🏙️ Smart Cities</li>
+																				<li class="transform hover:translate-x-1 transition-transform">🚱 Gestión de Agua</li>
+																		</ul>
+																		<ul class="feature-list text-gray-700">
+																				<li class="transform hover:translate-x-1 transition-transform">🌊 Oceanografía</li>
+																				<li class="transform hover:translate-x-1 transition-transform">🏭 Impacto Ambiental</li>
+																				<li class="transform hover:translate-x-1 transition-transform">🚨 Gestión de Crisis</li>
+																		</ul>
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</section>
+
+			<!-- PostgreSQL -->
+			<section class="tool-section bg-gradient-to-br from-[#336791] via-[#2F5E8D] to-[#1F3C59]" data-id="postgresql">
+				<div class="h-screen w-screen flex items-center justify-center">
+						<div class="w-full max-w-6xl px-4">
+								<div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 border-l-4 border-[#336791]">
+										<div class="grid md:grid-cols-2 gap-12 items-center">
+												<div class="space-y-8 order-2 md:order-1">
+														<div class="rounded-xl flex items-center justify-center p-6 bg-gradient-to-br from-white/50 to-white/30 backdrop-blur-sm">
+																<div class="relative group">
+																		<div class="absolute -inset-0.5 bg-gradient-to-r from-[#336791] to-[#2F5E8D] opacity-20 group-hover:opacity-30 transition duration-300 rounded-full blur">
+																		</div>
+																		<img src="img/postgresql.png" alt="PostgreSQL" 
+																				 class="max-h-64 max-w-full object-contain mx-auto relative drop-shadow-xl hover:scale-105 transition-transform duration-300">
+																</div>
+														</div>
+												</div>
+		
+												<div class="order-1 md:order-2">
+														<div class="mb-8">
+																<div class="flex items-center gap-3 mb-2">
+																		<h2 class="text-3xl font-bold text-[#336791]">PostgreSQL</h2>
+																		<span class="px-3 py-1 text-sm bg-blue-100 text-[#336791] rounded-full">🗄️ Database</span>
+																</div>
+																<p class="text-gray-600">El sistema de gestión de bases de datos más avanzado en FOSS</p>
+														</div>
+		
+														<div class="mb-8">
+																<h3 class="text-xl font-semibold text-[#336791] mb-4 flex items-center gap-2">
+																		<span>🌐 Grandes Bases de Datos</span>
+																</h3>
+																<ul class="feature-list text-gray-700 space-y-3">
+																		<li class="transform hover:translate-x-1 transition-transform">📱 Instagram: +100TB de datos sociales</li>
+																		<li class="transform hover:translate-x-1 transition-transform">🎵 Spotify: +60PB de datos musicales</li>
+																		<li class="transform hover:translate-x-1 transition-transform">🌍 OpenStreetMap: +1.5PB de datos geográficos</li>
+																		<li class="transform hover:translate-x-1 transition-transform">🚗 Uber: +100PB en análisis de viajes</li>
+																</ul>
+														</div>
+		
+														<div class="bg-gradient-to-br from-[#F5F7FA] to-[#E4E7ED] rounded-xl p-6 shadow-inner">
+															<h3 class="text-xl font-semibold text-[#336791] mb-4">⚡ Casos de Uso Masivos</h3>
+															<div class="grid grid-cols-2 gap-6">
+																	<ul class="feature-list text-gray-700">
+																			<li class="transform hover:translate-x-1 transition-transform">🛰️ NASA</li>
+																			<li class="transform hover:translate-x-1 transition-transform">🏥 NHS Reino Unido</li>
+																			<li class="transform hover:translate-x-1 transition-transform">🎮 PlayStation</li>
+																	</ul>
+																	<ul class="feature-list text-gray-700">
+																			<li class="transform hover:translate-x-1 transition-transform">🍎 Apple</li>
+																			<li class="transform hover:translate-x-1 transition-transform">📊 Reddit</li>
+																			<li class="transform hover:translate-x-1 transition-transform">🏦 Goldman Sachs</li>
+																	</ul>
+															</div>
+													</div>
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</section>
 
 		</div>
 	</div>
